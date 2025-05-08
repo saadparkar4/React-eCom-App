@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity } from "react
 import React, { useState } from "react";
 import products from "@/data/products";
 import ProductItem from "./ProductItem";
+import { Background } from "@react-navigation/elements";
 
 const ProductList = () => {
 	const [query, setQuery] = useState("");
@@ -16,6 +17,7 @@ const ProductList = () => {
 		.map((product) => {
 			return <ProductItem key={product.id} product={product} />;
 		});
+
 	return (
 		<ScrollView contentContainerStyle={styles.container} style={styles.containerStyle}>
 			{/* Products List */}
@@ -55,6 +57,12 @@ const styles = StyleSheet.create({
 	},
 	containerStyle: {
 		backgroundColor: "#efefef",
+		paddingRight: 0,
+		paddingLeft: 0,
+		paddingBottom: 0,
+	},
+	hCcontainerStyle: {
+		backgroundColor: "lightgreen",
 		paddingRight: 0,
 		paddingLeft: 0,
 		paddingBottom: 0,
